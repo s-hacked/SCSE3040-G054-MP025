@@ -1,54 +1,41 @@
-# MP025 findings --- fill in every value, keep every key.
-# The marking tool reads this file. Write null only where the comment says so.
-# Use the exact column names and group values from your data files.
-
-group_id: "G054"          # your group id, e.g. "G042"
-problem_id: "MP025"
-
+group_id: G054
+problem_id: MP025
 data_issues:
   leaking_column:
     present: true
     column: kg_sold_at_auction
-
   unit_mixup:
     present: true
     column: trip_hours
     group_value: North Jetty
     factor: 60
-
   sentinel_value:
     present: false
     column: null
     value: null
     count: null
-
   duplicate_rows:
     present: true
     count: 46
-
   stuck_sensor:
     present: false
     column: null
     start_date: null
     end_date: null
-
   target_typos:
     present: false
     count: null
-
   spelling_variants:
     present: true
     column: boat
     true_levels: 3
-
 tracking:
-  experiment_name: null
-  best_run_id: null
-  registered_model_name: null
-  champion_version: null
-
+  experiment_name: mp025_fishing_boat_catch
+  best_run_id: 1ed21384971d487ca5d6db4c2d859bf3
+  registered_model_name: fishing_boat_catch_champion
+  champion_version: 1
 monitoring:
-  psi:                     # cleaned train.csv vs later.csv, 10 bins
+  psi:
     trip_hours: null
     distance_from_shore_km: null
     crew: null
@@ -56,11 +43,11 @@ monitoring:
     water_temp_c: null
     net_length_m: null
   most_drifted_feature: null
-  mae_by_group:            # v1 on later.csv, per value of harbour
-    'North Jetty': null
-    'South Jetty': null
-    'Lagoon': null
+  mae_by_group:
+    North Jetty: null
+    South Jetty: null
+    Lagoon: null
   worst_served_group: null
-  mae_v1_on_check: null    # v1 on the last 30% of later.csv (by date)
-  mae_v2_on_check: null    # v2 on the same rows
-  decision: null           # promote or keep
+  mae_v1_on_check: null
+  mae_v2_on_check: null
+  decision: null
