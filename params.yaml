@@ -1,0 +1,63 @@
+# SCSE3040 MLOps - MP025 Configuration Settings
+
+data:
+  raw_train_path: "data/train.csv"
+  processed_dir: "data/processed"
+  cleaned_train_path: "data/processed/train_cleaned.csv"
+
+cleaning:
+  remove_duplicates: true
+  unit_mixup:
+    target_harbour: "North Jetty"
+    target_column: "trip_hours"
+    conversion_factor: 60.0
+  leakage_columns:
+    - "kg_sold_at_auction"
+  metadata_columns:
+    - "record_id"
+    - "date"
+  boat_mapping:
+    "country_boat": "country_boat"
+    " country_boat": "country_boat"
+    "country_boat ": "country_boat"
+    "COUNTRY_BOAT": "country_boat"
+    "Country_Boat": "country_boat"
+    "country boat": "country_boat"
+    "cou.": "country_boat"
+    "motorised": "motorised"
+    " motorised": "motorised"
+    "motorised ": "motorised"
+    "MOTORISED": "motorised"
+    "Motorised": "motorised"
+    "mot.": "motorised"
+    "trawler": "trawler"
+    " trawler": "trawler"
+    "trawler ": "trawler"
+    "TRAWLER": "trawler"
+    "Trawler": "trawler"
+    "tra.": "trawler"
+
+features:
+  target_column: "catch_kg"
+  numerical_columns:
+    - "trip_hours"
+    - "distance_from_shore_km"
+    - "crew"
+    - "wave_height_m"
+    - "water_temp_c"
+    - "net_length_m"
+  categorical_columns:
+    - "boat"
+    - "harbour"
+  excluded_columns:
+    - "record_id"
+    - "date"
+    - "kg_sold_at_auction"
+
+training:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "mp025_fishing_boat_catch"
+  registered_model_name: "fishing_boat_catch_champion"
+  model_artifact_path: "models/model.joblib"
+  test_size: 0.2
+  random_state: 42
