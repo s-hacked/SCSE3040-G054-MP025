@@ -36,18 +36,18 @@ tracking:
   champion_version: 1
 monitoring:
   psi:
-    trip_hours: null
-    distance_from_shore_km: null
-    crew: null
-    wave_height_m: null
-    water_temp_c: null
-    net_length_m: null
-  most_drifted_feature: null
+    trip_hours: 0.029426
+    distance_from_shore_km: 8.618333
+    crew: 0.027228
+    wave_height_m: 0.054356
+    water_temp_c: 0.038976
+    net_length_m: 0.0339
+  most_drifted_feature: distance_from_shore_km
   mae_by_group:
-    North Jetty: null
-    South Jetty: null
-    Lagoon: null
-  worst_served_group: null
-  mae_v1_on_check: null
-  mae_v2_on_check: null
-  decision: null
+    North Jetty: 45.8467
+    South Jetty: 196.1579
+    Lagoon: 40.8651
+  worst_served_group: South Jetty
+  mae_v1_on_check: 84.5629
+  mae_v2_on_check: 46.32
+  decision: promote
